@@ -20,8 +20,8 @@ Simple discord bot to show various statistics, gamble and play music etc.
 ## 🔗 Development discord
 https://discord.gg/eCjP4C7vYG
 
-## Contributing
-To be able to commit you have to follow the commitlint standard.
+## 💻 Contributing
+Either create and issue or forki the repo and then follow the commit standard. 
  - fixes starts with **fix:**
  - chores starts with **chore:**
  - features starts with **feat:**
