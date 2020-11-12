@@ -1,6 +1,6 @@
 # 🤖 Deverobot discord bot 🤖
 
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
+[![CircleCI](https://circleci.com/gh/kimmymonassar/DeveroBot.svg?style=shield)](https://github.com/kimmymonassar/DeveroBot)
 
 ## About Deverobot
 Simple discord bot to show various statistics, gamble and play music etc.
