@@ -2,8 +2,6 @@ import addServer from '../db/addServer';
 import { Client } from 'discord.js-commando';
 import path from 'path';
 import { logSuccess, logFatal } from '../api/logUtil';
-import { config } from 'dotenv';
-config();
 
 const OWNER_ID = process.env.OWNER_ID;
 const TOKEN = process.env.TOKEN;
@@ -29,6 +27,7 @@ export default class DiscordBot {
         ['third', 'Third command group'],
         ['fourth', 'Third command group'],
         ['fifth', 'Fifth command group'],
+        ['sixth', 'Sixth command group'],
       ])
       .registerDefaultGroups()
       .registerDefaultCommands({

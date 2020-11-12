@@ -14,9 +14,8 @@ export default class listSubreddits extends Command {
     });
   }
 
-  async run(message: any) {
-    const userId = `${message.author.username}#${message.author.discriminator}`;
-    await createOrGetUser(userId);
+  async run(message: Record<string, any>) {
+    await createOrGetUser(message);
     logSuccess('Successfully listed subreddits');
     return message.say(`Currently subscribed subreddits: **${subreddits.join(', ')}**`);
   }

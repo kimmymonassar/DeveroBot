@@ -15,11 +15,10 @@ export default class rollDice extends Command {
     });
   }
 
-  async run(message: any) {
+  async run(message: Record<string, any>) {
     try {
       const amount = parseInt(message.argString.trim(), 10);
-      const userId = `${message.author.username}#${message.author.discriminator}`;
-      const dbUser: any = await createOrGetUser(userId);
+      const dbUser: any = await createOrGetUser(message);
       const playerBalance = dbUser.currency;
 
       if (dbUser.currency >= amount) {

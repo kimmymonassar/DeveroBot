@@ -1,7 +1,7 @@
 import { Command } from 'discord.js-commando';
 import createOrGetUser from '../../db/createOrGetUser';
 
-module.exports = class getHelpCommands extends Command {
+export default class getHelpCommands extends Command {
   constructor(client: any) {
     super(client, {
       name: 'helppls',
@@ -12,9 +12,8 @@ module.exports = class getHelpCommands extends Command {
     });
   }
 
-  async run(message: any) {
-    const userId = `${message.author.username}#${message.author.discriminator}`;
-    await createOrGetUser(userId);
+  async run(message: Record<string, any>) {
+    await createOrGetUser(message);
     return message.reply(`List of currently working commands:
     - **postmeme** (aliases: just meme also works) - posts a random meme from subscribed subreddits
     - **listreddits** (aliases: listsubreddits also works) - lists currently subscribed subreddits
@@ -26,4 +25,4 @@ module.exports = class getHelpCommands extends Command {
     - **corona** -- (aliases: 'coronastats', 'covid', 'pandemic') - takes one parameter in the form of country
     `);
   }
-};
+}
