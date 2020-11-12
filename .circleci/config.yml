@@ -16,7 +16,7 @@ jobs:
             - run: git push --follow-tags origin master
       - node/with-cache:
          steps:
-            - run: echo 'deploying master branch'
+            - run: echo 'deploying masxter branch'
             - run: ssh -v -o "StrictHostKeyChecking no" root@devero.dev "cd ~/projects/deverobot; git pull --rebase; ./publish.sh"
 
 workflows:
