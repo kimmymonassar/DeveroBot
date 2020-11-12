@@ -13,9 +13,9 @@ jobs:
             - run: git config --global user.email "kimmymonassar@gmail.com"
             - run: git config --global user.name "Kimmy Monassar"
             - run: git branch --set-upstream-to=origin/deploy
-            - run: git pull
             - run: git checkout master
             - run: git merge deploy
+            - run: git pull
             - run: npm install standard-version
             - run: npm run release
             - run: git push --follow-tags origin master
