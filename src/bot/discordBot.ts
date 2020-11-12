@@ -44,7 +44,7 @@ export default class DiscordBot {
     this.bot.once('ready', () => {
       logSuccess(`Logged in as ${this.bot.user?.tag}! (${this.bot.user?.id})`);
 
-      this.bot.user?.setActivity('you sleep', { type: 'WATCHING' });
+      this.bot.user?.setActivity('!b help', { type: 'WATCHING' });
 
       this.bot.guilds.cache.forEach(async (server) => {
         if (server) {
