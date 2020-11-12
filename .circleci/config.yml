@@ -12,9 +12,10 @@ jobs:
           steps:
             - run: git config user.email "kimmymonassar@gmail.com"
             - run: git config user.name "Kimmy Monassar"
-            - run: npm install
+            - run: git pull
+            - run: npm install standard-version
             - run: npm run release
-            - run: git push --follow-tags origin master [skip ci]
+            - run: git push --follow-tags origin master
       - node/with-cache:
          steps:
             - run: echo 'deploying master branch'
