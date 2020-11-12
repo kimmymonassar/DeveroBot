@@ -3,6 +3,7 @@ import { logSuccess } from '../api/logUtil';
 export default async function createOrGetUser(error: string, type: string) {
   try {
     const newError = new Error({
+      timestamp: new Date(),
       type,
       error,
     });
