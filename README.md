@@ -1,5 +1,6 @@
 # 🤖 Deverobot discord bot 🤖
 
+## Build status
 [![CircleCI](https://circleci.com/gh/kimmymonassar/DeveroBot.svg?style=shield)](https://github.com/kimmymonassar/DeveroBot)
 
 ## About Deverobot
