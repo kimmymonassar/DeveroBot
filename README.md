@@ -19,3 +19,24 @@ Simple discord bot to show various statistics, gamble and play music etc.
   
 ## 🔗 Development discord
 https://discord.gg/eCjP4C7vYG
+
+## Contributing
+To be able to commit you have to follow the commitlint standard.
+ - fixes starts with **fix:**
+ - chores starts with **chore:**
+ - features starts with **feat:**
+ - refactoring starts with **refactor:**
+ - test starts with **test:**
+
+All available values:
+'build',
+'ci',
+'chore',
+'docs',
+'feat',
+'fix',
+'perf',
+'refactor',
+'revert',
+'style',
+'test'

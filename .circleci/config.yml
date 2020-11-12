@@ -10,6 +10,13 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
+            - run: git config user.email "kimmymonassar@gmail.com"
+            - run: git config user.name "Kimmy Monassar"
+            - run: npm install
+            - run: npm run release
+            - run: git push --follow-tags origin master [skip ci]
+      - node/with-cache:
+         steps:
             - run: echo 'deploying master branch'
             - run: ssh -v -o "StrictHostKeyChecking no" root@devero.dev "cd ~/projects/deverobot; git pull --rebase; ./publish.sh"
 
