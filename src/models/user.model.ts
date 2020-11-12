@@ -18,10 +18,15 @@ const UserSchema = new Schema({
     required: true,
     default: 1,
   },
-  timesPlayed: {
-    type: Number,
+  isAdmin: {
+    type: Boolean,
     required: true,
-    default: 0,
+    default: false,
+  },
+  isOwner: {
+    type: Boolean,
+    required: true,
+    default: false,
   },
 });
 

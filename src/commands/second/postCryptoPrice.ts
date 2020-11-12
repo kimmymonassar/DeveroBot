@@ -15,10 +15,9 @@ export default class postCryptoPrice extends Command {
     });
   }
 
-  async run(message: any) {
+  async run(message: Record<string, any>) {
     try {
-      const userId = `${message.author.username}#${message.author.discriminator}`;
-      await createOrGetUser(userId);
+      await createOrGetUser(message);
       const msg = await getCryptoPrice();
       logSuccess('Successfully listed crypto prices');
       const embed = new MessageEmbed().setDescription(msg).setColor(0x00ae86).setTimestamp();

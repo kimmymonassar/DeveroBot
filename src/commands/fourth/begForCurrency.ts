@@ -14,16 +14,15 @@ export default class rollDice extends Command {
       description: 'Begs for currency',
     });
   }
-  async run(message: any) {
+  async run(message: Record<string, any>) {
     try {
-      const user = `${message.author.username}#${message.author.discriminator}`;
-      const dbUser: any = await createOrGetUser(user);
+      const dbUser: any = await createOrGetUser(message);
       const result = rollDiceGame();
       const didWin = result.player > result.cpu ? true : false;
 
       if (didWin) {
         await handleCurrency(dbUser, 500, didWin);
-        logSuccess(`Gave ${user} 500 currency`);
+        logSuccess(`Gave ${message.author.username}#${message.author.discriminator} 500 currency`);
         return message.reply(`Here is **500** stupid, your current balance is: **${dbUser.currency}**`);
       } else {
         return message.reply('No money for you');

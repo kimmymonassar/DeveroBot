@@ -13,12 +13,11 @@ export default class rollDice extends Command {
     });
   }
 
-  async run(message: any) {
+  async run(message: Record<string, any>) {
     try {
-      const user = `${message.author.username}#${message.author.discriminator}`;
-      const dbUser: any = await createOrGetUser(user);
+      const dbUser: any = await createOrGetUser(message);
       const playerBalance = dbUser.currency;
-      logSuccess(`Posted current balance for ${user}`);
+      logSuccess(`Posted current balance for ${message.author.username}#${message.author.discriminator}`);
       return message.reply(`Your current balance is: **${playerBalance}**`);
     } catch (e) {
       logError(`Error from getCurrency.js: ${e}`);

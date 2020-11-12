@@ -10,7 +10,7 @@ export default async function getStockPrice(symbol: string, argsFromMsg: string)
     const firstValueObject: any = Object.values(obj['Time Series (5min)'])[0];
     const valueArr = Object.values(firstValueObject);
 
-    return `Latest stock prices for **$${argsFromMsg}**:
+    return `Latest stock prices for **$${argsFromMsg.toUpperCase()}**:
 Open: $${valueArr[0]}
 High: $${valueArr[1]}
 Low: $${valueArr[2]}

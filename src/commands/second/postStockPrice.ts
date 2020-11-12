@@ -15,10 +15,9 @@ export default class postStockPrice extends Command {
     });
   }
 
-  async run(message: any) {
+  async run(message: Record<string, any>) {
     try {
-      const userId = `${message.author.username}#${message.author.discriminator}`;
-      await createOrGetUser(userId);
+      await createOrGetUser(message);
 
       const argsFromMsg = message.argString.trim();
       const msg = await getStockPrice(argsFromMsg.trim(), argsFromMsg);
