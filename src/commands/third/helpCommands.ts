@@ -23,6 +23,7 @@ export default class getHelpCommands extends Command {
     - **balance** -- (aliases: 'balance', 'wallet', 'money', 'bal') show current balance
     - **beg** -- (alias: 'moneypls') begs for balance
     - **corona** -- (aliases: 'coronastats', 'covid', 'pandemic') - takes one parameter in the form of country
+    **For more help join the official Deverobot discord:** https://discord.gg/eCjP4C7vY
     `);
   }
 }

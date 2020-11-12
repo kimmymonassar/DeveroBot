@@ -21,7 +21,7 @@ Simple discord bot to show various statistics, gamble and play music etc.
 https://discord.gg/eCjP4C7vYG
 
 ## 💻 Contributing
-Either create and issue or forki the repo and then follow the commit standard. 
+Either create and issue or fork the repo and then follow the commit standard and make a PR. 
  - fixes starts with **fix:**
  - chores starts with **chore:**
  - features starts with **feat:**
