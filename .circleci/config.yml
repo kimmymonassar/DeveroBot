@@ -8,12 +8,12 @@ jobs:
       name: node/default
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-            - run: git pull
-            - run: npm install standard-version
-            - run: npm run release
-            - run: git push --follow-tags origin master
+      # - node/with-cache:
+      #     steps:
+      #       - run: git pull
+      #       - run: npm install standard-version
+      #       - run: npm run release
+      #       - run: git push --follow-tags origin master
       - node/with-cache:
          steps:
             - run: echo 'deploying master branch'
@@ -26,4 +26,4 @@ workflows:
       - build:
           filters:
             branches:
-              only: deploy 
+              only: master 
