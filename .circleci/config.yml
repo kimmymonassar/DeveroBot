@@ -10,6 +10,7 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
+            - run: git branch --set-upstream-to=origin/deploy
             - run: git pull
             - run: npm install standard-version
             - run: npm run release
