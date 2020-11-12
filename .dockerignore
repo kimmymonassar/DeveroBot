@@ -1,0 +1,16 @@
+.vscode
+node_modules
+.editorconfig
+.gitignore
+.travis.yml
+appveyor.yml
+LICENSE
+README.md
+.github
+.cirleci
+__test__
+coverage
+nodemon.json
+/__test__
+publish.sh
+jest.config.js

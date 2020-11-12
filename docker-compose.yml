@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  app:
+    build: .
+    command: node ./lib/src/index.js
+    restart: always
+    ports:
+      - '4380:4380'
+    env_file:
+      - ~/env-files/deverobot/.env
