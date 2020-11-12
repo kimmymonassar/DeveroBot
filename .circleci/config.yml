@@ -10,22 +10,25 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: git config user.email "kimmymonassar@gmail.com"
-            - run: git config user.name "Kimmy Monassar"
+            - run: git config --global user.email "kimmymonassar@gmail.com"
+            - run: git config --global user.name "Kimmy Monassar"
+            - run: git branch --set-upstream-to=origin/deploy
+            - run: git checkout master
+            - run: git merge deploy
             - run: git pull
             - run: npm install standard-version
             - run: npm run release
             - run: git push --follow-tags origin master
       - node/with-cache:
          steps:
-            - run: echo 'deploying master branch'
+            - run: echo 'deploying masxter branch'
             - run: ssh -v -o "StrictHostKeyChecking no" root@devero.dev "cd ~/projects/deverobot; git pull --rebase; ./publish.sh"
 
 workflows:
   version: 2.1
-  workflow-name:
+  build_project:
     jobs: 
       - build:
           filters:
             branches:
-              only: master
+              only: deploy 
