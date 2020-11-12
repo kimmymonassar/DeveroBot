@@ -4,7 +4,7 @@
   "description": "Deverobot for Discord",
   "main": "./lib/src/index.js",
   "license": "MIT",
-  "repository": "https://github.com/kimmymonassar/deverobot.git",
+  "repository": "https://github.com/kimmymonassar/DeveroBot.git",
   "scripts": {
     "build": "tsc",
     "start": "node lib/src/index.js",
