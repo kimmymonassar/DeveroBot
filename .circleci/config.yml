@@ -14,11 +14,11 @@ jobs:
             - run: git config --global user.name "Kimmy Monassar"
             - run: git branch --set-upstream-to=origin/deploy
             - run: git pull
+            - run: git checkout master
+            - run: git merge deploy
             - run: npm install standard-version
             - run: npm run release
             - run: git push --follow-tags origin master
-            - run: git checkout master
-            - run: git merge deploy
       - node/with-cache:
          steps:
             - run: echo 'deploying masxter branch'
