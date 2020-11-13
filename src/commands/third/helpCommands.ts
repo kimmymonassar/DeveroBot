@@ -15,15 +15,15 @@ export default class getHelpCommands extends Command {
   async run(message: Record<string, any>) {
     await createOrGetUser(message);
     return message.reply(`List of currently working commands:
-    - **postmeme** (aliases: just meme also works) - posts a random meme from subscribed subreddits
-    - **listreddits** (aliases: listsubreddits also works) - lists currently subscribed subreddits
-    - **cryptoprice** (aliases: 'crypto', 'btc', 'eth', 'xrp' also works) - lists current cypto prices
-    - **stock** - takes one argument in the form of stock symbol (name) and returns current price
-    - **gamble** -- takes on argument, gamble away your hard earned points
-    - **balance** -- (aliases: 'balance', 'wallet', 'money', 'bal') show current balance
-    - **beg** -- (alias: 'moneypls') begs for balance
-    - **corona** -- (aliases: 'coronastats', 'covid', 'pandemic') - takes one parameter in the form of country
-    **For more help join the official Deverobot discord:** https://discord.gg/eCjP4C7vY
+    - **postmeme** -- (also: 'meme') - posts a random meme from subscribed subreddits
+    - **listreddits** -- (also: 'listsubreddits') - lists currently subscribed subreddits
+    - **cryptoprice** -- (also: 'crypto', 'btc', 'eth', 'xrp') - lists current cypto prices
+    - **stock** -- (also: 'stockprice') - takes one argument in the form of stock symbol 
+    - **gamble** -- (also: 'dice') - takes on argument, gamble away your hard earned points
+    - **balance** -- (also: 'wallet', 'money', 'currency', 'bal') show current balance
+    - **beg** -- (also: 'moneypls') - begs for balance
+    - play -- (also: 'song', 'music') Play your favorite songs, takes one youtube link as argument **coming soon**
+    **For more help join the official Deverobot discord server:** https://discord.gg/eCjP4C7vYG
     `);
   }
 }

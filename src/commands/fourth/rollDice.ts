@@ -1,8 +1,8 @@
 import { Command } from 'discord.js-commando';
-import { logError } from '../../api/logUtil';
+import { logError } from '../../api/util/logUtil';
 import createOrGetUser from '../../db/createOrGetUser';
-import rollDiceGame from '../../api/rollDiceGame';
-import handleCurrency from '../../api/handleCurrency';
+import rollDiceGame from '../../api/gambling/rollDiceGame';
+import handleCurrency from '../../api/gambling/handleCurrency';
 
 export default class rollDice extends Command {
   constructor(client: any) {

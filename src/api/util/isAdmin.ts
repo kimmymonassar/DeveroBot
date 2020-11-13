@@ -1,4 +1,4 @@
-import Admin from '../models/admin.model';
+import Admin from '../../models/admin.model';
 export function isOwner(id: any) {
   return process.env.OWNER_ID === id;
 }

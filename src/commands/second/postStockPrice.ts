@@ -1,14 +1,14 @@
 import { Command } from 'discord.js-commando';
-import getStockPrice from '../../api/getStockPrice';
+import getStockPrice from '../../api/getStatistics/getStockPrice';
 import createOrGetUser from '../../db/createOrGetUser';
-import { logSuccess, logError } from '../../api/logUtil';
+import { logSuccess, logError } from '../../api/util/logUtil';
 import { MessageEmbed } from 'discord.js';
 
 export default class postStockPrice extends Command {
   constructor(client: any) {
     super(client, {
       name: 'stock',
-      aliases: [],
+      aliases: ['stockprice'],
       group: 'second',
       memberName: 'stock',
       description: 'Posts current price of specified stock symbol',

@@ -1,5 +1,5 @@
 import { connect, connection } from 'mongoose';
-import { logSuccess, logError, logFatal } from '../api/logUtil';
+import { logSuccess, logError, logFatal } from '../api/util/logUtil';
 
 const uri = `${process.env.MONGODB_URL}:${process.env.MONGO_PORT}${process.env.MONGO_DB_PATH}`;
 

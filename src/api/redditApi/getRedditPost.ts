@@ -1,5 +1,5 @@
 import axios from 'axios';
-import subreddits from '../../assets/json/subreddits.json';
+import subreddits from '../../../assets/json/subreddits.json';
 
 export default async function getPost(specificSub?: string): Promise<string> {
   const types = ['image', 'rich:video'];

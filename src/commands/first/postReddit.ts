@@ -1,6 +1,6 @@
 import { Command } from 'discord.js-commando';
-import getRedditPost from '../../api/getRedditPost';
-import { logSuccess, logError } from '../../api/logUtil';
+import getRedditPost from '../../api/redditApi/getRedditPost';
+import { logSuccess, logError } from '../../api/util/logUtil';
 import createOrGetUser from '../../db/createOrGetUser';
 
 export default class getMemePost extends Command {

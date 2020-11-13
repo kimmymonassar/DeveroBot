@@ -1,7 +1,7 @@
 import { Command } from 'discord.js-commando';
 import createOrGetUser from '../../db/createOrGetUser';
 import makeUserAdmin from '../../db/makeUserAdmin';
-import { isOwner } from '../../api/isAdmin';
+import { isOwner } from '../../api/util/isAdmin';
 
 export default class makeAdminCommand extends Command {
   constructor(client: any) {

@@ -1,5 +1,5 @@
 import Error from '../models/error.model';
-import { logSuccess } from '../api/logUtil';
+import { logSuccess } from '../api/util/logUtil';
 export default async function createOrGetUser(error: string, type: string) {
   try {
     const newError = new Error({
