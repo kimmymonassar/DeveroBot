@@ -10,7 +10,11 @@
     "start": "node lib/src/index.js",
     "dev": "concurrently \"tsc -w\" \"nodemon lib/src/index.js\"",
     "test": "jest",
-    "release": "standard-version"
+    "release": "standard-version",
+    "release-patch": "standard-version -- --release-as patch",
+    "release-as-minor": "standard-version -- --release-as minor",
+    "release-as-pre": "standard-version -- --release-as prerelease",
+    "release-as-major": "standard-version -- --release-as major"
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
@@ -52,7 +56,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "tsc && lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
