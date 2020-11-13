@@ -2,7 +2,7 @@
  * @module LogUtil
  */
 import { getLogger } from 'log4js';
-import createDbErrorMsg from '../db/addErrorToDb';
+import createDbErrorMsg from '../../db/addErrorToDb';
 
 const logger = getLogger();
 logger.level = 'debug';

@@ -1,5 +1,5 @@
 import User from '../../models/user.model';
-import { logError } from '..util/logUtil';
+import { logError } from '../../api/util/logUtil';
 
 export default async function handleCurrency(player: any, amount: number, didWin: boolean): Promise<void> {
   try {
