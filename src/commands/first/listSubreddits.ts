@@ -1,6 +1,6 @@
 import { Command } from 'discord.js-commando';
 import subreddits from '../../../assets/json/subreddits.json';
-import { logSuccess } from '../../api/logUtil';
+import { logSuccess } from '../../api/util/logUtil';
 import createOrGetUser from '../../db/createOrGetUser';
 
 export default class listSubreddits extends Command {

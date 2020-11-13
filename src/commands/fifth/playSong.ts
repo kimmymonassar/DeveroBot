@@ -1,5 +1,5 @@
 import { Command } from 'discord.js-commando';
-import { logError, logSuccess } from '../../api/logUtil';
+import { logError, logSuccess } from '../../api/util/logUtil';
 import createOrGetUser from '../../db/createOrGetUser';
 // import { getSongInfo } from '../../api/handleSongRequests';
 

@@ -1,6 +1,6 @@
 import User from '../models/user.model';
-import { isOwner } from '../api/isAdmin';
-import { logSuccess, logError } from '../api/logUtil';
+import { isOwner } from '../api/util/isAdmin';
+import { logSuccess, logError } from '../api/util/logUtil';
 export default async function createOrGetUser(message: Record<string, any>) {
   try {
     const username = `${message.author.username}#${message.author.discriminator}`;

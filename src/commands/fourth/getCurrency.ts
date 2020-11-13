@@ -1,5 +1,5 @@
 import { Command } from 'discord.js-commando';
-import { logSuccess, logError } from '../../api/logUtil';
+import { logSuccess, logError } from '../../api/util/logUtil';
 import createOrGetUser from '../../db/createOrGetUser';
 
 export default class rollDice extends Command {

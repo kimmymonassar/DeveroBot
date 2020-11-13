@@ -5,7 +5,7 @@ export default class adminCommands extends Command {
   constructor(client: any) {
     super(client, {
       name: 'admin',
-      aliases: ['adminpls'],
+      aliases: [],
       group: 'sixth',
       memberName: 'admin',
       description: 'Admin commands',

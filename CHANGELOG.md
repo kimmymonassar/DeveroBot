@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/kimmymonassar/DeveroBot/compare/v0.0.3...v0.0.4) (2020-11-13)
+
+
+### Features
+
+* added admin commands, global env variables, add admin, add owner ([45fa9cc](https://github.com/kimmymonassar/DeveroBot/commit/45fa9cc09d583cc477164f3af6ce0247c03a9f27))
+
 ### 0.0.3 (2020-11-12)
 
 

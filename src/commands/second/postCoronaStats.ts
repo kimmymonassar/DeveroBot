@@ -1,7 +1,7 @@
 import { Command } from 'discord.js-commando';
-import getCoronaStats from '../../api/getCoronaStats';
+import getCoronaStats from '../../api/getStatistics/getCoronaStats';
 import createOrGetUser from '../../db/createOrGetUser';
-import { logSuccess, logError } from '../../api/logUtil';
+import { logSuccess, logError } from '../../api/util/logUtil';
 import { MessageEmbed } from 'discord.js';
 
 export default class postCryptoPrice extends Command {
@@ -11,7 +11,7 @@ export default class postCryptoPrice extends Command {
       aliases: ['coronastats', 'covid', 'pandemic'],
       group: 'second',
       memberName: 'corona',
-      description: 'Posts current corona statistics',
+      description: 'Posts current corona statistics for specified country',
     });
   }
 

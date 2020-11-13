@@ -1,5 +1,5 @@
 import Admin from '../models/admin.model';
-import { logSuccess, logError } from '../api/logUtil';
+import { logSuccess, logError } from '../api/util/logUtil';
 
 export default async function makeUserAdmin(message: Record<string, any>) {
   try {

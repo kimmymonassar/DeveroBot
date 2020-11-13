@@ -6,7 +6,7 @@ export default class ownerCommands extends Command {
   constructor(client: any) {
     super(client, {
       name: 'owner',
-      aliases: ['ownerpls'],
+      aliases: [],
       group: 'sixth',
       memberName: 'owner',
       description: 'Owner commands',

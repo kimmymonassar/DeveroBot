@@ -1,7 +1,7 @@
 import { Command } from 'discord.js-commando';
-import getCryptoPrice from '../../api/getCryptoPrice';
+import getCryptoPrice from '../../api/getStatistics/getCryptoPrice';
 import createOrGetUser from '../../db/createOrGetUser';
-import { logSuccess, logError } from '../../api/logUtil';
+import { logSuccess, logError } from '../../api/util/logUtil';
 import { MessageEmbed } from 'discord.js';
 
 export default class postCryptoPrice extends Command {

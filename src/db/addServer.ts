@@ -1,5 +1,5 @@
 import Server from '../models/server.model';
-import { logSuccess, logError } from '../api/logUtil';
+import { logSuccess, logError } from '../api/util/logUtil';
 export default async function addServer(server: any): Promise<void> {
   try {
     const serverId = server.id;
