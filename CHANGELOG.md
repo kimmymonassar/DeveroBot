@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/kimmymonassar/DeveroBot/compare/v0.0.4...v0.0.5) (2020-11-13)
+
+
+### Features
+
+* **releases:** add scripts for major/minor/pre ([be2acb4](https://github.com/kimmymonassar/DeveroBot/commit/be2acb4fc2c52457211a64c3ad22088d5dd7981f))
+* added admin commands, global env variables, add admin, add owner ([#4](https://github.com/kimmymonassar/DeveroBot/issues/4)) ([7a1fcdc](https://github.com/kimmymonassar/DeveroBot/commit/7a1fcdc87dff733efd100351faa479891b5157e1))
+
+
+### Bug Fixes
+
+* **paths:** added correct paths after refactor ([ece1da1](https://github.com/kimmymonassar/DeveroBot/commit/ece1da1e870f7ea385826d953d489659a35d2ff1))
+
 ### [0.0.4](https://github.com/kimmymonassar/DeveroBot/compare/v0.0.3...v0.0.4) (2020-11-13)
 
 
