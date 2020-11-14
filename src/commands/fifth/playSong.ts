@@ -38,7 +38,7 @@ export default class playSong extends Command {
       logSuccess('Success');
       return message.say('Function not implemented yet');
     } catch (e) {
-      logError(`Error from playSong.js ${e}`);
+      logError(`Error from playSong.ts ${e}`);
     }
   }
 }

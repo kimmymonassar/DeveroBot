@@ -5,11 +5,12 @@ import { logSuccess, logFatal } from '../api/util/logUtil';
 
 const OWNER_ID = process.env.OWNER_ID;
 const TOKEN = process.env.TOKEN;
+const BOT_COMMAND_PREFIX = process.env.BOT_COMMAND_PREFIX;
 
 export default class DiscordBot {
   private static _instance: DiscordBot = new DiscordBot();
   private bot = new Client({
-    commandPrefix: '!b',
+    commandPrefix: BOT_COMMAND_PREFIX,
     owner: OWNER_ID,
   });
 

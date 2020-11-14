@@ -1,5 +1,6 @@
 import Server from '../models/server.model';
 import { logSuccess, logError } from '../api/util/logUtil';
+
 export default async function addServer(server: any): Promise<void> {
   try {
     const serverId = server.id;
@@ -10,7 +11,7 @@ export default async function addServer(server: any): Promise<void> {
         serverName: server.name,
         serverId: server.id,
         maximumMembers: server.maximumMembers,
-        joinedTimestamp: server.joinedTimestamp,
+        joinedTimestamp: server.joinedTimestamp.toString(),
         ownerId: server.ownerId,
         premiumTier: server.premiumTier,
         large: server.large,

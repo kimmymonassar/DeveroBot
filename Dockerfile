@@ -7,4 +7,4 @@ RUN npm ci
 COPY . .
 RUN npm run build
 EXPOSE 4883
-CMD ["node" "lib/src/index.js"]
+CMD ["npm", "run", "start"]

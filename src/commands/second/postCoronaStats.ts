@@ -27,7 +27,7 @@ export default class postCryptoPrice extends Command {
       const embed = new MessageEmbed().setDescription(msg).setColor('#FF2D00').setTimestamp();
       return message.embed(embed);
     } catch (e) {
-      logError(`Error from postCoronaStats.js: ${e}`);
+      logError(`Error from postCoronaStats.ts: ${e}`);
       return message.say('Something went wrong');
     }
   }
