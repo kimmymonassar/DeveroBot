@@ -3,6 +3,7 @@ import { logSuccess, logError } from '../../api/util/logUtil';
 import getCsgoCase from '../../db/getCaseFromDb';
 import createOrGetUser from '../../db/createOrGetUser';
 import { MessageEmbed } from 'discord.js';
+import transformToTitleCase from '../../api/util/transformToTitleCase';
 
 export default class openCsgoCase extends Command {
   constructor(client: any) {
@@ -17,7 +18,7 @@ export default class openCsgoCase extends Command {
 
   async run(message: Record<string, any>) {
     try {
-      const argsFromMsg = message.argString.trim();
+      const argsFromMsg = transformToTitleCase(message.argString.trim());
       console.log(`argsFromMsg: ${argsFromMsg}`);
 
       await createOrGetUser(message);
@@ -39,7 +40,7 @@ export default class openCsgoCase extends Command {
       return message.embed(embed);
     } catch (e) {
       logError(`Error from openCsgoCase.ts: ${e}`);
-      return message.say('Something went wrong');
+      return message.say('Something went wrong, currently only Fracture Case is supported.');
     }
   }
 }
