@@ -23,6 +23,7 @@ export default class getHelpCommands extends Command {
     - **balance** -- (also: 'wallet', 'money', 'currency', 'bal') show current balance
     - **beg** -- (also: 'moneypls') - begs for balance
     - play -- (also: 'song', 'music') Play your favorite songs, takes one youtube link as argument **coming soon**
+    - case -- (also: 'opencase') Opens a CSGO case, currently only Fracture Case available
     **For more help join the official Deverobot discord server:** https://discord.gg/eCjP4C7vYG
     `);
   }
