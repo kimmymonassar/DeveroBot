@@ -1,13 +1,13 @@
 {
   "name": "deverobot",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Deverobot for Discord",
   "main": "./lib/src/index.js",
   "license": "MIT",
   "repository": "https://github.com/kimmymonassar/DeveroBot.git",
   "scripts": {
     "build": "tsc",
-    "start": "node lib/src/index.js",
+    "start": "NODE_ENV=production node lib/src/index.js",
     "dev": "concurrently \"tsc -w\" \"nodemon lib/src/index.js\"",
     "test": "jest",
     "release": "standard-version",
@@ -44,6 +44,7 @@
     "@types/jest": "^26.0.15",
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.7.0",
+    "cross-env": "^7.0.2",
     "eslint": "^7.11.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-import": "^2.22.1",

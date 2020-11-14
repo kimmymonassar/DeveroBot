@@ -22,7 +22,7 @@ export default class getMemePost extends Command {
       logSuccess(`Successfully sent meme`);
       return message.say(msg);
     } catch (e) {
-      logError(`Error from postReddit.js: ${e}`);
+      logError(`Error from postReddit.ts: ${e}`);
       return message.say('Something went wrong');
     }
   }

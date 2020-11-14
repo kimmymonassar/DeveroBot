@@ -27,7 +27,7 @@ export default class postStockPrice extends Command {
       const embed = new MessageEmbed().setDescription(msg).setColor(0x00ae86).setTimestamp();
       return message.embed(embed);
     } catch (e) {
-      logError(`Error from postStockPrice.js: ${e}`);
+      logError(`Error from postStockPrice.ts: ${e}`);
       return message.reply('You have to supply a valid stock symbol like !b stock SNAP, stupid');
     }
   }

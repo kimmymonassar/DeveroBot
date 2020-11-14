@@ -28,7 +28,7 @@ export default class rollDice extends Command {
         return message.reply('No money for you');
       }
     } catch (e) {
-      logError(`Error from begForCurrency.js: ${e}`);
+      logError(`Error from begForCurrency.ts: ${e}`);
       return message.say('Something went wrong');
     }
   }

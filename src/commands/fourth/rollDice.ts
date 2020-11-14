@@ -44,7 +44,7 @@ export default class rollDice extends Command {
         return message.reply(`Lol you're too poor, current balance is: ${dbUser.currency}`);
       }
     } catch (e) {
-      logError(`Error from rollDice.js: ${e}`);
+      logError(`Error from rollDice.ts: ${e}`);
       return message.say('Something went wrong');
     }
   }

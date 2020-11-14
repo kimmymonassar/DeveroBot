@@ -20,7 +20,7 @@ export default class rollDice extends Command {
       logSuccess(`Posted current balance for ${message.author.username}#${message.author.discriminator}`);
       return message.reply(`Your current balance is: **${playerBalance}**`);
     } catch (e) {
-      logError(`Error from getCurrency.js: ${e}`);
+      logError(`Error from getCurrency.ts: ${e}`);
       return message.say('Something went wrong');
     }
   }
