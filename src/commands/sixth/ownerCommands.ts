@@ -4,6 +4,7 @@ import { logSuccess } from '../../api/util/logUtil';
 import getCsgoCase from '../../db/getCaseFromDb';
 import createOrGetUser from '../../db/createOrGetUser';
 import { MessageEmbed } from 'discord.js';
+import transformToTitleCase from '../../api/util/transformToTitleCase';
 
 export default class ownerCommands extends Command {
   constructor(client: any) {
@@ -17,7 +18,7 @@ export default class ownerCommands extends Command {
   }
 
   async overrideCaseOpening(message: Record<string, any>) {
-    const argsFromMsg = message.argString.trim();
+    const argsFromMsg = transformToTitleCase(message.argString.trim());
     console.log(`argsFromMsg: ${argsFromMsg}`);
 
     await createOrGetUser(message);
@@ -43,7 +44,6 @@ export default class ownerCommands extends Command {
     await makeUserAdmin(message);
     const dbUser = await createOrGetUser(message);
     const obj = dbUser?.toObject();
-    console.log(obj);
     if (obj.isOwner) {
       this.overrideCaseOpening(message);
     } else {

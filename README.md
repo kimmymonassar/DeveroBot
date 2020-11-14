@@ -17,6 +17,7 @@ Simple discord bot to show various statistics, gamble and play music etc.
   - beg -- (also: 'moneypls') - begs for balance
   - corona -- (also: 'coronastats', 'covid', 'pandemic') - takes one argument in the form of country
   - play -- (also: 'song', 'music') Play your favorite songs, takes one youtube link as argument **coming soon**
+  - case -- (also: 'opencase') Opens a CSGO case, currently only Fracture Case available
   
 ## 🔗 Official development discord
 https://discord.gg/eCjP4C7vYG
@@ -47,6 +48,7 @@ Read more about commitlint over at:
 
 ## Roadmap
 * Spam detection
+* Present opened cases with better style and images, also show steam market prices.
 * Write proper roadmap
 
 ## 🍺 Buy me a beer
