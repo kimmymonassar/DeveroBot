@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/kimmymonassar/DeveroBot/compare/v0.0.6...v0.0.7) (2020-11-14)
+
+
+### Bug Fixes
+
+* **utils:** added util function and removed debug messages ([8ee3aa2](https://github.com/kimmymonassar/DeveroBot/commit/8ee3aa21f1f25b75dc8c591864cfc4a46c11584b))
+
 ### [0.0.6](https://github.com/kimmymonassar/DeveroBot/compare/v0.0.5...v0.0.6) (2020-11-14)
 
 
