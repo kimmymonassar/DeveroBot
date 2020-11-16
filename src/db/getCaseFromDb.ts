@@ -18,7 +18,7 @@ export default async function getCsgoCase(caseName: string, override = false) {
 
     const specialOrRegular = rarityStats.grade === 'Special' ? 'specialItems' : 'items';
     if (specialOrRegular === 'specialItems') {
-      rarityStats.grade = 'Covert';
+      rarityStats.grade = 'Special';
     }
     const csGoCase = await Cases.findOne({ name: caseName });
 
