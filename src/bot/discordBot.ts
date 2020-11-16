@@ -26,7 +26,7 @@ export default class DiscordBot {
         ['first', 'First command group'],
         ['second', 'Second command group'],
         ['third', 'Third command group'],
-        ['fourth', 'Third command group'],
+        ['fourth', 'Fourth command group'],
         ['fifth', 'Fifth command group'],
         ['sixth', 'Sixth command group'],
       ])
@@ -36,8 +36,8 @@ export default class DiscordBot {
         prefix: false,
         ping: true,
         eval: false,
-        unknownCommand: true,
-        commandState: true,
+        unknownCommand: false,
+        // commandState: true,
       })
       .registerCommandsIn(path.join(__dirname, '../commands'));
 
