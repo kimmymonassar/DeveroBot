@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/kimmymonassar/DeveroBot/compare/v0.0.8...v1.1.0) (2020-11-16)
+
+
+### Features
+
+* **commands:** added custom unknow-command class ([30c8a27](https://github.com/kimmymonassar/DeveroBot/commit/30c8a27e09ea1d35ad01c99182edc7885c283c96))
+
 ### [0.0.8](https://github.com/kimmymonassar/DeveroBot/compare/v0.0.7...v0.0.8) (2020-11-16)
 
 
