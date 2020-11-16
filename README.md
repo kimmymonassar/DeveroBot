@@ -16,7 +16,7 @@ Simple discord bot to show various statistics, gamble and play music etc.
   - **beg** -- (also: 'moneypls') - begs for balance
   - play -- (also: 'song', 'music') - Play your favorite songs, takes one youtube link as argument **coming soon**
   - **listcases** -- (also: 'caselist', 'csgocases') - Lists all available CSGO cases you can open
-  - **case** -- (also: 'opencase') Opens a CSGO case
+  - **case** -- (also: 'open', 'opencase') Opens a CSGO case
 
 ## 🔗 Official development discord
 https://discord.gg/eCjP4C7vYG
