@@ -10,7 +10,7 @@ export default class openCsgoCase extends Command {
     super(client, {
       name: 'case',
       aliases: ['opencase'],
-      group: 'second',
+      group: 'fourth',
       memberName: 'opencsgocase',
       description: 'Open a CSGO case',
     });
@@ -19,7 +19,6 @@ export default class openCsgoCase extends Command {
   async run(message: Record<string, any>) {
     try {
       const argsFromMsg = transformToTitleCase(message.argString.trim());
-      console.log(`argsFromMsg: ${argsFromMsg}`);
 
       await createOrGetUser(message);
       const csgoCase = await getCsgoCase(argsFromMsg);
@@ -29,14 +28,19 @@ export default class openCsgoCase extends Command {
       );
 
       const msg = `
-      **Congratulations! Your case contained**
-      Weapon: **${csgoCase?.name}**
       Rarity: **${csgoCase?.grade}**
       Wear: **${csgoCase?.wear}**
       StatTrak: **${csgoCase?.statTrak}**
-      Float: **${csgoCase?.float}**`;
+      Float: **${csgoCase?.float}**
+      **${csgoCase?.inspectInGameText}**
+      ${csgoCase?.inspectInGame}`;
 
-      const embed = new MessageEmbed().setDescription(msg).setColor(csgoCase?.color).setTimestamp();
+      const embed = new MessageEmbed()
+        .setTitle(csgoCase?.name)
+        .setURL(csgoCase?.gunMarketLink)
+        .setDescription(msg)
+        .setColor(csgoCase?.color)
+        .setImage(csgoCase?.image);
       return message.embed(embed);
     } catch (e) {
       logError(`Error from openCsgoCase.ts: ${e}`);

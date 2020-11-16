@@ -1,6 +1,6 @@
 {
   "name": "deverobot",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Deverobot for Discord",
   "main": "./lib/src/index.js",
   "license": "MIT",

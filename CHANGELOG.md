@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/kimmymonassar/DeveroBot/compare/v0.0.7...v0.0.8) (2020-11-16)
+
+
+### Features
+
+* **csgo list:** lists all available csgo cases you can open ([5e3b3b3](https://github.com/kimmymonassar/DeveroBot/commit/5e3b3b3660de53a3916ce8bb3b0bfa494560d43f))
+
 ### [0.0.6](https://github.com/kimmymonassar/DeveroBot/compare/v0.0.5...v0.0.6) (2020-11-14)
 
 

@@ -36,7 +36,7 @@ const calculateWear = (input: number) => {
     return 'Well worn';
   }
 
-  return 'Battle scared';
+  return 'Battle scarred';
 };
 
 const getRarity = (max: number) => {
@@ -83,7 +83,7 @@ const getRarity = (max: number) => {
     isBetween(rarityValue, ST_RESTRICTED_RARITY, ST_MIL_SPEC_RARITY)
   ) {
     return {
-      grade: 'Mil-spec',
+      grade: 'Mil-Spec',
       statTrak: true,
       color: '#4B69FF',
       wear: calculateWear(floatValue),
@@ -92,7 +92,7 @@ const getRarity = (max: number) => {
   }
 
   return {
-    grade: 'Mil-spec',
+    grade: 'Mil-Spec',
     statTrak: false,
     color: '#4B69FF',
     wear: calculateWear(floatValue),
