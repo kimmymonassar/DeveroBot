@@ -47,7 +47,7 @@ export default class ownerCommands extends Command {
     if (obj.isOwner) {
       this.overrideCaseOpening(message);
     } else {
-      return message.reply('Not implemented yet');
+      return message.reply('Only owners can use this command');
     }
   }
 }

@@ -44,7 +44,7 @@ export default class openCsgoCase extends Command {
       return message.embed(embed);
     } catch (e) {
       logError(`Error from openCsgoCase.ts: ${e}`);
-      return message.say('Something went wrong, currently only Fracture Case is supported.');
+      return message.say('Something went wrong, couldnt get case or item.');
     }
   }
 }
