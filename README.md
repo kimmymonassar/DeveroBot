@@ -7,18 +7,17 @@
 Simple discord bot to show various statistics, gamble and play music etc.
 
 ## 🔑 Key Features
-  - helppls (alsp: 'help', 'imstupid', 'helpcommands', 'plshelp') - lists all available commands
-  - postmeme (also: 'meme') - posts a random meme from subscribed subreddits
-  - listreddits (also: 'listsubreddits') - lists currently subscribed subreddits
-  - cryptoprice (also: 'crypto', 'btc', 'eth', 'xrp') - lists current cypto prices
-  - stock (also: 'stockprice') - takes one argument in the form of stock symbol (name) and returns current price
-  - gamble -- (also: 'dice') - takes on argument, gamble away your hard earned points
-  - balance -- (also: 'wallet', 'money', 'currency', 'bal') show current balance
-  - beg -- (also: 'moneypls') - begs for balance
-  - corona -- (also: 'coronastats', 'covid', 'pandemic') - takes one argument in the form of country
-  - play -- (also: 'song', 'music') Play your favorite songs, takes one youtube link as argument **coming soon**
-  - case -- (also: 'opencase') Opens a CSGO case, currently only Fracture Case available
-  
+  - **postmeme** -- (also: 'meme') - posts a random meme from subscribed subreddits
+  - **listreddits** -- (also: 'listsubreddits') - lists currently subscribed subreddits
+  - **cryptoprice** -- (also: 'crypto', 'btc', 'eth', 'xrp') - lists current cypto prices
+  - **stock** -- (also: 'stockprice') - takes one argument in the form of stock symbol 
+  - **gamble** -- (also: 'dice') - takes on argument, gamble away your hard earned points
+  - **balance** -- (also: 'wallet', 'money', 'currency', 'bal') show current balance
+  - **beg** -- (also: 'moneypls') - begs for balance
+  - play -- (also: 'song', 'music') - Play your favorite songs, takes one youtube link as argument **coming soon**
+  - **listcases** -- (also: 'caselist', 'csgocases') - Lists all available CSGO cases you can open
+  - **case** -- (also: 'opencase') Opens a CSGO case
+
 ## 🔗 Official development discord
 https://discord.gg/eCjP4C7vYG
 
