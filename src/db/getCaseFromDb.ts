@@ -17,16 +17,17 @@ export default async function getCsgoCase(caseName: string, override = false) {
       : getRarityStats();
 
     const specialOrRegular = rarityStats.grade === 'Special' ? 'specialItems' : 'items';
+
     if (specialOrRegular === 'specialItems') {
       rarityStats.grade = 'Special';
     }
-    const csGoCase = await Cases.findOne({ name: caseName });
 
+    const csGoCase = await Cases.findOne({ name: { $regex: caseName, $options: 'i' } });
     if (csGoCase) {
       const obj = csGoCase.toObject();
       const formattedAndRandomized = formatRandomItem(obj, specialOrRegular, rarityStats);
       logSuccess(
-        `Got CSGO case from DB with name:${caseName} and item: ${formattedAndRandomized.name} with statTrak:${rarityStats.statTrak}, wear: ${rarityStats.wear} and float: ${rarityStats.float}`,
+        `Got CSGO case from DB with name:${obj.name} and item: ${formattedAndRandomized.name} with statTrak:${rarityStats.statTrak}, wear: ${rarityStats.wear} and float: ${rarityStats.float}`,
       );
       return formattedAndRandomized;
     }
