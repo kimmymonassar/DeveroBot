@@ -1,57 +1,38 @@
-# version: 2.1
-# orbs:
-#   node: circleci/node:14.9.0
+version: 2
+orbs:
+  node: circleci/node@3.0.0
 
-# jobs:
-#   build:
-#     executor:
-#       name: node/default
-#     steps:
-#       - checkout
-#       - run: npm install
-#       - run: npx semantic-releaser
-#       - node/with-cache:
-#          steps:
-#             - run: echo 'deploying masxter branch'
-#             - run: ssh -v -o "StrictHostKeyChecking no" root@devero.dev "cd ~/projects/deverobot; git pull --rebase; ./publish.sh"
-
-# workflows:
-#   version: 2.1
-#   build_project:
-#     jobs: 
-#       - build:
-#           filters:
-#             branches:
-#               only: master 
-
-
-version: 2.1
 jobs:
-  run_tests:
+  executor:
+    run_tests:
     docker:
-      - image: circleci/node:14.9.0
-    steps:
-      - checkout
-      - run: npm ci
-      - run: npm run test
-release:
-    docker:
-      - image: circleci/node:14.9.0
+      - image: node:latest
     steps:
       - checkout
       - run: npm install
-      # Run optional required steps before releasing
-      # - run: npm run build-script
-      - run: npx semantic-release
-      - run: echo 'deploying masxter branch'
-      - run: ssh -v -o "StrictHostKeyChecking no" root@devero.dev "cd ~/projects/deverobot; git pull --rebase; ./publish.sh"
+      - run: npm run test
+      - run: npx semantic-releaser
+    
+    build_release:
+      - docker:
+          -image: node:latest
+        steps:
+        - run: echo 'deploying master branch'
+        - run: ssh -v -o "StrictHostKeyChecking no" root@devero.dev "cd ~/projects/deverobot; git pull --rebase; ./publish.sh"
 
 workflows:
-  version: 2.1
+  version: 2
+  watch_master:
+    jobs: 
+      - build:
+          filters:
+            branches:
+              only: master
   test_and_release:
-    # Run the test jobs first, then the release only when all the test jobs are successful
-    jobs:
-      - run_tests
-      - release:
-          requires:
-            - run_tests
+      jobs:
+        - run_tests
+        - build_release
+        - release:
+            requires:
+               - run_tests
+               - build_release
