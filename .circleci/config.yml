@@ -1,38 +1,30 @@
-version: 2
+
+version: 2.1
 orbs:
-  node: circleci/node@3.0.0
+  node: circleci/node@1.1.6
 
 jobs:
-  executor:
-    run_tests:
-    docker:
-      - image: node:latest
+  build:
+    executor:
+      name: node/default
     steps:
       - checkout
-      - run: npm install
-      - run: npm run test
-      - run: npx semantic-releaser
-    
-    build_release:
-      - docker:
-          -image: node:latest
-        steps:
-        - run: echo 'deploying master branch'
-        - run: ssh -v -o "StrictHostKeyChecking no" root@devero.dev "cd ~/projects/deverobot; git pull --rebase; ./publish.sh"
+      - node/with-cache:
+          steps:
+            - checkout
+            - run: npm install
+            - run: npm run test
+            - run: npx semantic-release
+      - node/with-cache:
+         steps:
+            - run: echo 'deploying masxter branch'
+            - run: ssh -v -o "StrictHostKeyChecking no" root@devero.dev "cd ~/projects/deverobot; git pull --rebase; ./publish.sh"
 
 workflows:
   version: 2
-  watch_master:
+  build_project:
     jobs: 
       - build:
           filters:
             branches:
-              only: master
-  test_and_release:
-      jobs:
-        - run_tests
-        - build_release
-        - release:
-            requires:
-               - run_tests
-               - build_release
+              only: master 
