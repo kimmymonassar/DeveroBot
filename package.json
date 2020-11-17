@@ -1,6 +1,6 @@
 {
   "name": "deverobot",
-  "version": "1.1.1",
+  "version": "0.0.0-development",
   "description": "Deverobot for Discord",
   "main": "./lib/src/index.js",
   "license": "MIT",
@@ -10,11 +10,7 @@
     "start": "NODE_ENV=production node lib/src/index.js",
     "dev": "concurrently \"tsc -w\" \"nodemon lib/src/index.js\"",
     "test": "jest",
-    "release": "standard-version",
-    "release-patch": "standard-version -- --release-as patch",
-    "release-as-minor": "standard-version -- --release-as minor",
-    "release-as-pre": "standard-version -- --release-as prerelease",
-    "release-as-major": "standard-version -- --release-as major"
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
@@ -33,7 +29,7 @@
     "mongoose": "^5.10.14",
     "nodemon": "^2.0.6",
     "prettier": "^2.1.2",
-    "standard-version": "^9.0.0",
+    "semantic-release": "^17.2.3",
     "ts-node": "^9.0.0",
     "tslib": "^2.0.3",
     "ytdl-core": "^4.0.3"
@@ -53,7 +49,8 @@
     "jest": "^26.6.3",
     "lint-staged": "^10.5.1",
     "ts-jest": "^26.4.4",
-    "typescript": "^4.0.5"
+    "typescript": "^4.0.5",
+    "semantic-release": "^17.2.3"
   },
   "husky": {
     "hooks": {
