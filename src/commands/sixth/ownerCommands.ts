@@ -4,7 +4,6 @@ import { logSuccess } from '../../api/util/logUtil';
 import getCsgoCase from '../../db/getCaseFromDb';
 import createOrGetUser from '../../db/createOrGetUser';
 import { MessageEmbed } from 'discord.js';
-import transformToTitleCase from '../../api/util/transformToTitleCase';
 
 export default class ownerCommands extends Command {
   constructor(client: any) {
@@ -18,7 +17,7 @@ export default class ownerCommands extends Command {
   }
 
   async overrideCaseOpening(message: Record<string, any>) {
-    const argsFromMsg = transformToTitleCase(message.argString.trim());
+    const argsFromMsg = message.argString.trim();
     console.log(`argsFromMsg: ${argsFromMsg}`);
 
     await createOrGetUser(message);
@@ -28,16 +27,20 @@ export default class ownerCommands extends Command {
       `Got CSGO case with item: ${csgoCase?.name} for ${message.author.username}#${message.author.discriminator}`,
     );
 
-    const msg = `
-    **Congratulations! Your case contained**
-    Weapon: **${csgoCase?.name}**
-    Rarity: **${csgoCase?.grade}**
-    Wear: **${csgoCase?.wear}**
-    StatTrak: **${csgoCase?.statTrak}**
-    Float: **${csgoCase?.float}**`;
+    if (csgoCase) {
+      const msg = `
+      **Congratulations! Your case contained**
+      Weapon: **${csgoCase?.name}**
+      Rarity: **${csgoCase?.grade}**
+      Wear: **${csgoCase?.wear}**
+      StatTrak: **${csgoCase?.statTrak}**
+      Float: **${csgoCase?.float}**`;
 
-    const embed = new MessageEmbed().setDescription(msg).setColor(csgoCase?.color).setTimestamp();
-    return message.embed(embed);
+      const embed = new MessageEmbed().setDescription(msg).setColor(csgoCase?.color).setTimestamp();
+      return message.embed(embed);
+    } else {
+      return message.reply('Something went wrong, couldnt get case or item');
+    }
   }
 
   async run(message: Record<string, any>) {

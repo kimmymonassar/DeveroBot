@@ -1,3 +1,4 @@
+
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
@@ -8,19 +9,19 @@ jobs:
       name: node/default
     steps:
       - checkout
-      # - node/with-cache:
-      #     steps:
-      #       - run: git pull
-      #       - run: npm install standard-version
-      #       - run: npm run release
-      #       - run: git push --follow-tags origin master
+      - node/with-cache:
+          steps:
+            - checkout
+            - run: npm install
+            - run: npm run test
+            - run: npx semantic-release
       - node/with-cache:
          steps:
             - run: echo 'deploying masxter branch'
             - run: ssh -v -o "StrictHostKeyChecking no" root@devero.dev "cd ~/projects/deverobot; git pull --rebase; ./publish.sh"
 
 workflows:
-  version: 2.1
+  version: 2
   build_project:
     jobs: 
       - build:

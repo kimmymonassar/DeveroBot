@@ -1,4 +1,4 @@
-import getCoronaStats from '../../src/api/getCoronaStats';
+import getCoronaStats from '../../src/api/getStatistics/getCoronaStats';
 
 const randomCountry = (): string => {
   const countryArray = ['sweden', 'norway', 'brazil', 'south africa', 'france'];
