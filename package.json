@@ -26,7 +26,7 @@
     "ffmpeg": "0.0.4",
     "fluent-ffmpeg": "^2.1.2",
     "log4js": "^6.3.0",
-    "mongoose": "^5.10.14",
+    "mongoose": "^5.10.15",
     "nodemon": "^2.0.6",
     "prettier": "^2.1.2",
     "ts-node": "^9.0.0",
