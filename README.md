@@ -47,7 +47,9 @@ These commands can be:
 - 'style'  
 and many more.
 
-Read more about commit message conventions over at commitlint:  
+Since we dont really want to publish this bot to NPM we use the plugin [@semantic-release/git](https://github.com/semantic-release/git)
+
+You can read more about commit message conventions over at commitlint:  
 [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional)
 
 ## 🗺️ Roadmap
