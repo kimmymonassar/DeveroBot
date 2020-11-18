@@ -39,6 +39,8 @@ Here is an example taken from semantic-release's README.
 | perf(pencil): remove graphiteWidth option  | Major Release |
 | BREAKING CHANGE: The graphiteWidth option has been removed | ~~Major~~ Breaking Release |
 
+To not trigger a build at all, add **[ci skip]** to your commit message.
+
 You can also use other prefixes that will trigger a build but not an official release.
 These commands can be:
 - 'chore'
