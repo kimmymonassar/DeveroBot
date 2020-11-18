@@ -1,7 +1,5 @@
 # 🤖 Deverobot for Discord 🤖
-
-## 🔨 Build status
-[![CircleCI](https://circleci.com/gh/kimmymonassar/DeveroBot.svg?style=shield)](https://github.com/kimmymonassar/DeveroBot)
+[![CircleCI](https://circleci.com/gh/kimmymonassar/DeveroBot.svg?style=shield)](https://github.com/kimmymonassar/DeveroBot) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 ## 💬 About Deverobot
 Simple discord bot to show various statistics, gamble and play music etc.
@@ -26,31 +24,34 @@ If you dont feel like visiting the website, here is the Discord bot invite link:
 https://discord.gg/eCjP4C7vYG
 
 ## 💻 Contributing
-Either create an issue or fork the repo and then follow the commit standard and make a PR. 
- - fixes starts with **fix:**
- - chores starts with **chore:**
- - features starts with **feat:**
- - refactoring starts with **refactor:**
- - test starts with **test:**
+To contribute to the project, either create an issue or fork the repo and then follow the commit standard and make a PR. Or join the discord to talk about the feature you want to add or the issue you've encountered.
 
-All available values:
-* 'build',  
-* 'ci',  
-* 'chore',  
-* 'docs',  
-* 'feat',  
-* 'fix',  
-* 'perf',  
-* 'refactor',
-* 'revert',
-* 'style',
-* 'test'
+### Commit convention
+When commiting to the repo its important to write commit messages that follow our convention, we even have a pre-commit hook that wont let you commit if you dont follow the convention.
 
-Read more about commitlint over at:  
+Since we manage versions with [semantic-release](https://github.com/semantic-release/semantic-release) we use prefixes to handle the semantic versioning when a build is triggered.
+
+Here is an example taken from semantic-release's README.
+| Commit message | Release type |
+|---|---|
+| fix(pencil): stop graphite breaking when too much pressure applied  | Patch Release |
+| feat(pencil): add 'graphiteWidth' option	  | Minor Feature Release |
+| perf(pencil): remove graphiteWidth option  | Major Release |
+| BREAKING CHANGE: The graphiteWidth option has been removed | ~~Major~~ Breaking Release |
+
+You can also use other prefixes that will trigger a build but not an official release.
+These commands can be:
+- 'chore'
+- 'docs'
+- 'revert'
+- 'style'  
+and many more.
+
+Read more about commit message conventions over at commitlint:  
 [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional)
 
 ## 🗺️ Roadmap
-[Kanban](https://github.com/kimmymonassar/DeveroBot/projects/1)
+Check out our [Kanban](https://github.com/kimmymonassar/DeveroBot/projects/1) for in progress and upcoming features.
 
 ## 🍺 Buy me a beer
 [![paypal](https://img.shields.io/static/v1?label=paypal&message=donate&color=success&logo=PayPal&style=for-the-badge)](https://paypal.me/deverobot)
