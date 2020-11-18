@@ -23,7 +23,7 @@ export default class getMemePost extends Command {
       return message.say(msg);
     } catch (e) {
       logError(`Error from postReddit.ts: ${e}`);
-      return message.say('Something went wrong');
+      return message.say('Sorry, coudlnt fetch reddit post,  try again later');
     }
   }
 }

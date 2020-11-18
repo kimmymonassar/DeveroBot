@@ -21,7 +21,7 @@ export default class rollDice extends Command {
       return message.reply(`Your current balance is: **${playerBalance}**`);
     } catch (e) {
       logError(`Error from getCurrency.ts: ${e}`);
-      return message.say('Something went wrong');
+      return message.say('Coudlnt get currency, try again');
     }
   }
 }

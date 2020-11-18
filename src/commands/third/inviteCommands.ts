@@ -6,7 +6,7 @@ export default class inviteHelpCommands extends Command {
   constructor(client: any) {
     super(client, {
       name: 'info',
-      aliases: ['botinfo', 'github', 'roadmap'],
+      aliases: ['invite', 'botinfo', 'github', 'roadmap'],
       group: 'third',
       memberName: 'info',
       description: 'Posts link to invite Deverobot to your server',

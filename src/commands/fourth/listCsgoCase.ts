@@ -31,7 +31,7 @@ export default class listCsgoCases extends Command {
       return message.embed(embed);
     } catch (e) {
       logError(`Error from openCsgoCase.ts: ${e}`);
-      return message.say('Something went wrong, could not currently get case list.');
+      return message.say(`Something went wrong, couldn't currently get case list`);
     }
   }
 }
