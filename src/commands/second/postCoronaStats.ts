@@ -4,7 +4,7 @@ import createOrGetUser from '../../db/createOrGetUser';
 import { logSuccess, logError } from '../../api/util/logUtil';
 import { MessageEmbed } from 'discord.js';
 
-export default class postCryptoPrice extends Command {
+export default class postCoronaStats extends Command {
   constructor(client: any) {
     super(client, {
       name: 'corona',
@@ -28,7 +28,7 @@ export default class postCryptoPrice extends Command {
       return message.embed(embed);
     } catch (e) {
       logError(`Error from postCoronaStats.ts: ${e}`);
-      return message.say('Something went wrong');
+      return message.say('Failed to get corona stats from API');
     }
   }
 }

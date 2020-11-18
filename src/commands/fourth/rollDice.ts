@@ -45,7 +45,7 @@ export default class rollDice extends Command {
       }
     } catch (e) {
       logError(`Error from rollDice.ts: ${e}`);
-      return message.say('Something went wrong');
+      return message.say('Something went wrong in the gambling action, please try again');
     }
   }
 }

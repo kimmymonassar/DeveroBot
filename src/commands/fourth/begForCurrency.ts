@@ -29,7 +29,7 @@ export default class rollDice extends Command {
       }
     } catch (e) {
       logError(`Error from begForCurrency.ts: ${e}`);
-      return message.say('Something went wrong');
+      return message.say('Beg failed, try again');
     }
   }
 }

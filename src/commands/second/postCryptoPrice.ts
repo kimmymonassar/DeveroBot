@@ -24,7 +24,7 @@ export default class postCryptoPrice extends Command {
       return message.embed(embed);
     } catch (e) {
       logError(`Error from postCryptoPrice.ts: ${e}`);
-      return message.say('Something went wrong');
+      return message.say(`Couldn't get c`);
     }
   }
 }
