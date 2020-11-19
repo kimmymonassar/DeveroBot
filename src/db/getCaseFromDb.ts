@@ -1,5 +1,5 @@
 import Cases from '../models/cases.model';
-import { logSuccess, logError } from '../api/util/logUtil';
+import { logError, logSuccess } from '../api/util/logUtil';
 import getRarityStats from '../api/caseOpening/calculateCaseItem';
 import formatRandomItem from '../api/caseOpening/filterCsItemsArray';
 
@@ -16,16 +16,12 @@ export default async function getCsgoCase(caseName: string, override = false) {
         }
       : getRarityStats();
 
-    const specialOrRegular = rarityStats.grade === 'Special' ? 'specialItems' : 'items';
-
-    if (specialOrRegular === 'specialItems') {
-      rarityStats.grade = 'Special';
-    }
+    const objItemsPath = rarityStats.grade === 'Special' ? 'specialItems' : 'items';
 
     const csGoCase = await Cases.findOne({ name: { $regex: caseName, $options: 'i' } });
     if (csGoCase) {
       const obj = csGoCase.toObject();
-      const formattedAndRandomized = formatRandomItem(obj, specialOrRegular, rarityStats);
+      const formattedAndRandomized = formatRandomItem(obj, objItemsPath, rarityStats);
       logSuccess(
         `Got CSGO case from DB with name:${obj.name} and item: ${formattedAndRandomized.name} with statTrak:${rarityStats.statTrak}, wear: ${rarityStats.wear} and float: ${rarityStats.float}`,
       );

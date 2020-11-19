@@ -18,6 +18,7 @@ export default class dbConnection {
         useCreateIndex: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
+        poolSize: 10,
       });
       logSuccess('MongoDB connection is up');
     } catch (e) {
