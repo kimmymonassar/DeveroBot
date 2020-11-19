@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/kimmymonassar/DeveroBot/compare/v0.2.0...v0.2.1) (2020-11-19)
+
+
+### Bug Fixes
+
+* **cases:** fixed bug where result got undefined ([fb2da93](https://github.com/kimmymonassar/DeveroBot/commit/fb2da939690e9bace915bbbacc7a25a67b903eb2))
+
 # [0.2.0](https://github.com/kimmymonassar/DeveroBot/compare/v0.1.1...v0.2.0) (2020-11-19)
 
 
