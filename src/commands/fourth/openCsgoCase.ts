@@ -1,8 +1,10 @@
 import { Command } from 'discord.js-commando';
-import { logSuccess, logError } from '../../api/util/logUtil';
+import { logSuccess } from '../../api/util/logUtil';
 import getCsgoCase from '../../db/getCaseFromDb';
-import createOrGetUser from '../../db/createOrGetUser';
+import handleUserValues from '../../api/common/commonUserFunctions';
 import { MessageEmbed } from 'discord.js';
+import spamProtection from '../../api/util/spamProtection';
+import { SpamError, TypeError, CommandoError, userErrorText, spamErrorText } from '../../api/util/errorHandler';
 
 export default class openCsgoCase extends Command {
   constructor(client: any) {
@@ -15,11 +17,20 @@ export default class openCsgoCase extends Command {
     });
   }
 
+  async onError(): Promise<any> {
+    throw new CommandoError('discord.js-commando error');
+  }
+
   async run(message: Record<string, any>) {
     try {
+      const isSpam = await spamProtection(message);
+      if (isSpam) {
+        throw new SpamError(`User: ${message.author.username}#${message.author.discriminator} spammed`);
+      }
+
       const argsFromMsg = message.argString.trim();
 
-      await createOrGetUser(message);
+      await handleUserValues(message);
       const csgoCase = await getCsgoCase(argsFromMsg);
 
       logSuccess(
@@ -40,14 +51,20 @@ export default class openCsgoCase extends Command {
           .setURL(csgoCase?.gunMarketLink)
           .setDescription(msg)
           .setColor(csgoCase?.color)
-          .setImage(csgoCase?.image);
+          .setImage(csgoCase?.image)
+          .setTimestamp();
         return message.embed(embed);
       } else {
         throw new Error('Object csGoCase is null cause no hit from DB');
       }
     } catch (e) {
-      logError(`Error from openCsgoCase.ts: ${e}`);
-      return message.say('Something went wrong, couldnt get case or item.');
+      if (e instanceof SpamError) {
+        message.reply(spamErrorText);
+      } else if (e instanceof TypeError) {
+        message.say(`Something went wrong, couldnt get case or item.`);
+      } else if (e instanceof CommandoError) {
+        message.reply(userErrorText);
+      }
     }
   }
 }

@@ -1,8 +1,10 @@
 import { Command } from 'discord.js-commando';
 import getCryptoPrice from '../../api/getStatistics/getCryptoPrice';
-import createOrGetUser from '../../db/createOrGetUser';
-import { logSuccess, logError } from '../../api/util/logUtil';
+import handleUserValues from '../../api/common/commonUserFunctions';
+import { logSuccess } from '../../api/util/logUtil';
 import { MessageEmbed } from 'discord.js';
+import spamProtection from '../../api/util/spamProtection';
+import { SpamError, TypeError, CommandoError, userErrorText, spamErrorText } from '../../api/util/errorHandler';
 
 export default class postCryptoPrice extends Command {
   constructor(client: any) {
@@ -15,16 +17,29 @@ export default class postCryptoPrice extends Command {
     });
   }
 
+  async onError(): Promise<any> {
+    throw new CommandoError('discord.js-commando error');
+  }
+
   async run(message: Record<string, any>) {
     try {
-      await createOrGetUser(message);
+      const isSpam = await spamProtection(message);
+      if (isSpam) {
+        throw new SpamError(`User: ${message.author.username}#${message.author.discriminator} spammed`);
+      }
+      await handleUserValues(message);
       const msg = await getCryptoPrice();
       logSuccess('Successfully listed crypto prices');
       const embed = new MessageEmbed().setDescription(msg).setColor(0x00ae86).setTimestamp();
       return message.embed(embed);
     } catch (e) {
-      logError(`Error from postCryptoPrice.ts: ${e}`);
-      return message.say(`Couldn't get c`);
+      if (e instanceof SpamError) {
+        message.reply(spamErrorText);
+      } else if (e instanceof TypeError) {
+        message.say(`Failed to get crypto stats from API, try again later.`);
+      } else if (e instanceof CommandoError) {
+        message.reply(userErrorText);
+      }
     }
   }
 }

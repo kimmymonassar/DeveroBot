@@ -1,8 +1,10 @@
 import { Command } from 'discord.js-commando';
-import { logSuccess, logError } from '../../api/util/logUtil';
+import { logSuccess } from '../../api/util/logUtil';
 import listCases from '../../db/listCasesFromDb';
-import createOrGetUser from '../../db/createOrGetUser';
+import handleUserValues from '../../api/common/commonUserFunctions';
 import { MessageEmbed } from 'discord.js';
+import spamProtection from '../../api/util/spamProtection';
+import { SpamError, TypeError, CommandoError, userErrorText, spamErrorText } from '../../api/util/errorHandler';
 
 export default class listCsgoCases extends Command {
   constructor(client: any) {
@@ -15,9 +17,17 @@ export default class listCsgoCases extends Command {
     });
   }
 
+  async onError(): Promise<any> {
+    throw new CommandoError('discord.js-commando error');
+  }
+
   async run(message: Record<string, any>) {
     try {
-      await createOrGetUser(message);
+      const isSpam = await spamProtection(message);
+      if (isSpam) {
+        throw new SpamError(`User: ${message.author.username}#${message.author.discriminator} spammed`);
+      }
+      await handleUserValues(message);
       const msg = await listCases();
 
       const embed = new MessageEmbed()
@@ -30,8 +40,13 @@ export default class listCsgoCases extends Command {
       logSuccess(`Successfully listed all available CSGO cases from DB`);
       return message.embed(embed);
     } catch (e) {
-      logError(`Error from openCsgoCase.ts: ${e}`);
-      return message.say(`Something went wrong, couldn't currently get case list`);
+      if (e instanceof SpamError) {
+        message.reply(spamErrorText);
+      } else if (e instanceof TypeError) {
+        message.say(`Something went wrong, couldn't currently get case list`);
+      } else if (e instanceof CommandoError) {
+        message.reply(userErrorText);
+      }
     }
   }
 }

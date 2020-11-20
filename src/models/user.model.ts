@@ -8,6 +8,14 @@ const UserSchema = new Schema({
     maxlength: 255,
     unique: true,
   },
+  lastMsgTimestamp: {
+    type: Date,
+    default: 0,
+  },
+  spamViolations: {
+    type: Number,
+    default: 0,
+  },
   currency: {
     type: Number,
     required: true,
