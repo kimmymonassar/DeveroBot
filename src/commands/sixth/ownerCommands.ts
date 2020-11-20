@@ -1,9 +1,7 @@
-import makeUserAdmin from '../../db/makeUserAdmin';
 import { Command } from 'discord.js-commando';
-import { logSuccess } from '../../api/util/logUtil';
-import getCsgoCase from '../../db/getCaseFromDb';
-import createOrGetUser from '../../db/createOrGetUser';
-import { MessageEmbed } from 'discord.js';
+import { handleUser } from '../../api/common/commonUserFunctions';
+import spamProtection from '../../api/util/spamProtection';
+import { SpamError, TypeError, CommandoError, userErrorText, spamErrorText } from '../../api/util/errorHandler';
 
 export default class ownerCommands extends Command {
   constructor(client: any) {
@@ -16,41 +14,33 @@ export default class ownerCommands extends Command {
     });
   }
 
-  async overrideCaseOpening(message: Record<string, any>) {
-    const argsFromMsg = message.argString.trim();
-    console.log(`argsFromMsg: ${argsFromMsg}`);
-
-    await createOrGetUser(message);
-    const csgoCase = await getCsgoCase(argsFromMsg, true);
-
-    logSuccess(
-      `Got CSGO case with item: ${csgoCase?.name} for ${message.author.username}#${message.author.discriminator}`,
-    );
-
-    if (csgoCase) {
-      const msg = `
-      **Congratulations! Your case contained**
-      Weapon: **${csgoCase?.name}**
-      Rarity: **${csgoCase?.grade}**
-      Wear: **${csgoCase?.wear}**
-      StatTrak: **${csgoCase?.statTrak}**
-      Float: **${csgoCase?.float}**`;
-
-      const embed = new MessageEmbed().setDescription(msg).setColor(csgoCase?.color).setTimestamp();
-      return message.embed(embed);
-    } else {
-      return message.reply('Something went wrong, couldnt get case or item');
-    }
+  async onError(): Promise<any> {
+    throw new CommandoError('discord.js-commando error');
   }
 
   async run(message: Record<string, any>) {
-    await makeUserAdmin(message);
-    const dbUser = await createOrGetUser(message);
-    const obj = dbUser?.toObject();
-    if (obj.isOwner) {
-      this.overrideCaseOpening(message);
-    } else {
-      return message.reply('Only owners can use this command');
+    try {
+      const isSpam = await spamProtection(message);
+      if (isSpam) {
+        throw new SpamError(`User: ${message.author.username}#${message.author.discriminator} spammed`);
+      }
+
+      const dbUser = await handleUser(message);
+      /* 
+        Placeholder function for now
+      */
+      if (dbUser?.toObject().isOwner) {
+        return message.reply(`Yep, you're listed as owner`);
+      }
+      return message.reply(`Sorry, you're not listed as owner`);
+    } catch (e) {
+      if (e instanceof SpamError) {
+        message.reply(spamErrorText);
+      } else if (e instanceof TypeError) {
+        message.reply('Something went wrong');
+      } else if (e instanceof CommandoError) {
+        message.reply(userErrorText);
+      }
     }
   }
 }

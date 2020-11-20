@@ -1,8 +1,10 @@
 import { Command } from 'discord.js-commando';
 import getStockPrice from '../../api/getStatistics/getStockPrice';
-import createOrGetUser from '../../db/createOrGetUser';
-import { logSuccess, logError } from '../../api/util/logUtil';
+import handleUserValues from '../../api/common/commonUserFunctions';
+import { logSuccess } from '../../api/util/logUtil';
 import { MessageEmbed } from 'discord.js';
+import spamProtection from '../../api/util/spamProtection';
+import { SpamError, TypeError, CommandoError, userErrorText, spamErrorText } from '../../api/util/errorHandler';
 
 export default class postStockPrice extends Command {
   constructor(client: any) {
@@ -15,20 +17,34 @@ export default class postStockPrice extends Command {
     });
   }
 
+  async onError(): Promise<any> {
+    throw new CommandoError('discord.js-commando error');
+  }
+
   async run(message: Record<string, any>) {
     try {
-      await createOrGetUser(message);
+      const isSpam = await spamProtection(message);
+      if (isSpam) {
+        throw new SpamError(`User: ${message.author.username}#${message.author.discriminator} spammed`);
+      }
+
+      await handleUserValues(message);
 
       const argsFromMsg = message.argString.trim();
       const msg = await getStockPrice(argsFromMsg.trim(), argsFromMsg);
 
       logSuccess(`Successfully listed stock symbol ${argsFromMsg}`);
 
-      const embed = new MessageEmbed().setDescription(msg).setColor(0x00ae86).setTimestamp();
+      const embed = new MessageEmbed().setDescription(msg).setColor(0x00ae86).setFooter('Data from Alpha Vantage');
       return message.embed(embed);
     } catch (e) {
-      logError(`Error from postStockPrice.ts: ${e}`);
-      return message.reply('You have to supply a valid stock symbol like !b stock SNAP, stupid');
+      if (e instanceof SpamError) {
+        message.reply(spamErrorText);
+      } else if (e instanceof TypeError) {
+        message.reply('You have to supply a valid stock symbol like !b stock SNAP');
+      } else if (e instanceof CommandoError) {
+        message.reply(userErrorText);
+      }
     }
   }
 }

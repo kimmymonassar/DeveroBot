@@ -1,7 +1,9 @@
 import { Command } from 'discord.js-commando';
-import createOrGetUser from '../../db/createOrGetUser';
+import handleUserValues from '../../api/common/commonUserFunctions';
 import makeUserAdmin from '../../db/makeUserAdmin';
 import { isOwner } from '../../api/util/isAdmin';
+import spamProtection from '../../api/util/spamProtection';
+import { SpamError, TypeError, CommandoError, userErrorText, spamErrorText } from '../../api/util/errorHandler';
 
 export default class makeAdminCommand extends Command {
   constructor(client: any) {
@@ -14,13 +16,32 @@ export default class makeAdminCommand extends Command {
     });
   }
 
+  async onError(): Promise<any> {
+    throw new CommandoError('discord.js-commando error');
+  }
+
   async run(message: Record<string, any>) {
-    await createOrGetUser(message);
-    if (isOwner(message.author.id)) {
-      await makeUserAdmin(message);
-      return message.say('Made user admin');
-    } else {
-      return message.say('Only owner can use that command');
+    try {
+      const isSpam = await spamProtection(message);
+      if (isSpam) {
+        throw new SpamError(`User: ${message.author.username}#${message.author.discriminator} spammed`);
+      }
+
+      await handleUserValues(message);
+      if (isOwner(message.author.id)) {
+        await makeUserAdmin(message);
+        return message.say('Made user admin');
+      } else {
+        return message.say('Only owner can use that command');
+      }
+    } catch (e) {
+      if (e instanceof SpamError) {
+        message.reply(spamErrorText);
+      } else if (e instanceof TypeError) {
+        message.reply('Something went wrong');
+      } else if (e instanceof CommandoError) {
+        message.reply(userErrorText);
+      }
     }
   }
 }
