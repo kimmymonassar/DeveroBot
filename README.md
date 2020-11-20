@@ -20,6 +20,8 @@ If you dont feel like visiting the website, here is the Discord bot invite link:
   - **listcases** -- (also: 'caselist', 'csgocases') - Lists all available CSGO cases you can open
   - **case** -- (also: 'open', 'opencase') Opens a CSGO case
 
+**And much more to come**
+
 ## 🔗 Official development discord
 https://discord.gg/eCjP4C7vYG
 
