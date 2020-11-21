@@ -19,6 +19,8 @@ If you dont feel like visiting the website, here is the Discord bot invite link:
   - ~~play~~ -- (also: 'song', 'music') - Play your favorite songs, takes one youtube link as argument (**coming soon**)
   - **listcases** -- (also: 'caselist', 'csgocases') - Lists all available CSGO cases you can open
   - **case** -- (also: 'open', 'opencase') Opens a CSGO case
+  - **info** -- (also: 'botinfo', 'github', 'roadmap') shows bot info and relevant links
+  - **suggestion** -- (also: 'suggestions', 'feature') suggest new features to be added to the bot
 
 **And much more to come**
 
