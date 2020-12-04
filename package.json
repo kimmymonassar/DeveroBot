@@ -28,7 +28,7 @@
     "fluent-ffmpeg": "^2.1.2",
     "log4js": "^6.3.0",
     "mongoose": "^5.11.3",
-    "nanoid": "^3.1.18",
+    "nanoid": "^3.1.20",
     "nodemon": "^2.0.6",
     "prettier": "^2.2.0",
     "ts-node": "^9.0.0",
