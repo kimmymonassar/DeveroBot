@@ -34,7 +34,6 @@ export default class getHelpCommands extends Command {
       - **gamble** -- (also: 'dice') - takes on argument, gamble away your hard earned points
       - **balance** -- (also: 'wallet', 'money', 'currency', 'bal') show current balance
       - **beg** -- (also: 'moneypls') - begs for balance
-      - play -- (also: 'song', 'music') - Play your favorite songs, takes one youtube link as argument **coming soon**
       - **listcases** -- (also: 'caselist', 'csgocases') - Lists all available CSGO cases you can open
       - **case** -- (also: 'open', 'opencase') Opens a CSGO case
       - **info** -- (also: 'botinfo', 'github', 'roadmap') shows bot info and relevant links
