@@ -14,7 +14,7 @@ jobs:
             - checkout
             - run: npm install
             - run: npm run test
-            - run: npx semantic-release
+            - run: npx semantic-release --branches production
       - node/with-cache:
          steps:
             - run: echo 'deploying masxter branch'
