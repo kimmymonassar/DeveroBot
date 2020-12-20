@@ -1,3 +1,22 @@
+# [0.4.0](https://github.com/kimmymonassar/DeveroBot/compare/v0.3.1...v0.4.0) (2020-12-20)
+
+
+### Bug Fixes
+
+* **audit:** run npm audit fix ([c02fade](https://github.com/kimmymonassar/DeveroBot/commit/c02fade2e86a4c7b35df3ca3cd139dd926e64eb7))
+* **semver:** remove semantic-release npm dep ([38974af](https://github.com/kimmymonassar/DeveroBot/commit/38974afab70f9ae7b31ab4f8449ccf36cd62f336))
+* **texts:** update and remove outdated info ([7a93a5a](https://github.com/kimmymonassar/DeveroBot/commit/7a93a5ae1752ef044d06d7de57e3065155880942))
+
+
+### Features
+
+* **spam:** reduce spam protection timer to 5 seconds ([10c4cd5](https://github.com/kimmymonassar/DeveroBot/commit/10c4cd552b3c10c3c37690e3e6d1e34e2fb52871))
+
+
+### Performance Improvements
+
+* **vote:** add vote command ([699cbde](https://github.com/kimmymonassar/DeveroBot/commit/699cbdebd13ccc385b48ed3ec95979c9ec66ddab))
+
 ## [0.3.1](https://github.com/kimmymonassar/DeveroBot/compare/v0.3.0...v0.3.1) (2020-12-20)
 
 
