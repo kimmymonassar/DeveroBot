@@ -20,6 +20,7 @@ If you dont feel like visiting the website, here is the Discord bot invite link:
   - **case** -- (also: 'open', 'opencase') Opens a CSGO case
   - **info** -- (also: 'botinfo', 'github', 'roadmap') shows bot info and relevant links
   - **suggestion** -- (also: 'suggestions', 'feature') suggest new features to be added to the bot
+  - **vote** -- (also: 'botvote') help upvote bot to gain exposure 🥳
 
 **And much more to come**
 
@@ -58,7 +59,7 @@ You can read more about commit message conventions over at commitlint:
 [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional)
 
 ## 🗺️ Roadmap
-Check out our [Kanban](https://github.com/kimmymonassar/DeveroBot/projects/1) for in progress and upcoming features.
+Check out our [Kanban](https://github.com/kimmymonassar/DeveroBot/projects/1) for in progress and upcoming features. If something is missing, feel free to create an issue, a PR or use the suggestions command!
 
 ## 🍺 Buy me a beer
 [![paypal](https://img.shields.io/static/v1?label=paypal&message=donate&color=success&logo=PayPal&style=for-the-badge)](https://paypal.me/deverobot)
