@@ -7,8 +7,8 @@ export default async function spamProtection(message: Record<string, any>) {
   const userObject = dbUser?.toObject();
   const numberOfViolations = userObject.spamViolations;
   const lastMsgSent: any = new Date(userObject.lastMsgTimestamp).getTime();
+  const COOLDOWN_PERIOD = Number(process.env.SPAM_TIMEOUT);
 
-  const COOLDOWN_PERIOD = 5000;
   const checkDiff = (a: number, b: number) => {
     return Math.abs(a - b) > COOLDOWN_PERIOD;
   };

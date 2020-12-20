@@ -2,7 +2,9 @@ import { logError } from '../util/logUtil';
 
 const captureStacktrace = false;
 const userErrorText = `Unknown error! The error has been logged and the developers will look at it. Feel free to contact us over at https://discord.gg/eCjP4C7vY`;
-const spamErrorText = 'Slow down! You have to wait at least 10 seconds between messages.';
+const spamErrorText = `Slow down! You have to wait at least ${
+  Number(process.env.SPAM_TIMEOUT || 5000) / 1000
+} seconds between messages.`;
 
 export class SpamError extends Error {
   constructor(message: string) {
