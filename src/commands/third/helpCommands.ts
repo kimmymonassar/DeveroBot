@@ -38,6 +38,7 @@ export default class getHelpCommands extends Command {
       - **case** -- (also: 'open', 'opencase') Opens a CSGO case
       - **info** -- (also: 'botinfo', 'github', 'roadmap') shows bot info and relevant links
       - **suggestion** -- (also: 'suggestions', 'feature') suggest new features to be added to the bot
+      - **vote** -- (also: 'botvote') help upvote bot to gain exposure 🥳
       **For more help join the official Deverobot discord server:** https://discord.gg/eCjP4C7vYG
       `);
     } catch (e) {
