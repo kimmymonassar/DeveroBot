@@ -1,5 +1,5 @@
 # 🤖 Deverobot for Discord 🤖
-[![CircleCI](https://circleci.com/gh/kimmymonassar/DeveroBot.svg?style=shield)](https://github.com/kimmymonassar/DeveroBot) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![CircleCI](https://circleci.com/gh/kimmymonassar/DeveroBot.svg?style=shield)](https://github.com/kimmymonassar/DeveroBot) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) ![David](https://img.shields.io/david/kimmymonassar/deverobot)
 
 ## 💬 About Deverobot
 Simple discord bot to show various statistics, gamble and play music etc.
@@ -16,7 +16,6 @@ If you dont feel like visiting the website, here is the Discord bot invite link:
   - **gamble** -- (also: 'dice') - takes on argument, gamble away your hard earned points
   - **balance** -- (also: 'wallet', 'money', 'currency', 'bal') show current balance
   - **beg** -- (also: 'moneypls') - begs for balance
-  - ~~play~~ -- (also: 'song', 'music') - Play your favorite songs, takes one youtube link as argument (**coming soon**)
   - **listcases** -- (also: 'caselist', 'csgocases') - Lists all available CSGO cases you can open
   - **case** -- (also: 'open', 'opencase') Opens a CSGO case
   - **info** -- (also: 'botinfo', 'github', 'roadmap') shows bot info and relevant links
