@@ -1,3 +1,10 @@
+## [0.4.3](https://github.com/kimmymonassar/DeveroBot/compare/v0.4.2...v0.4.3) (2020-12-20)
+
+
+### Bug Fixes
+
+* **commands:** added missing command from help ([db7dd8f](https://github.com/kimmymonassar/DeveroBot/commit/db7dd8fdceea8e7aa79c7541bb05cf1170dc9c8f))
+
 ## [0.4.2](https://github.com/kimmymonassar/DeveroBot/compare/v0.4.1...v0.4.2) (2020-12-20)
 
 
