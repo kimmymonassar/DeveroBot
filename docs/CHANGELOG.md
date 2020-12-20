@@ -1,3 +1,10 @@
+## [0.4.2](https://github.com/kimmymonassar/DeveroBot/compare/v0.4.1...v0.4.2) (2020-12-20)
+
+
+### Bug Fixes
+
+* **env:** add missing env example variable ([f4fa7fc](https://github.com/kimmymonassar/DeveroBot/commit/f4fa7fc45ac526a95f7594afcf6e88c03f978c7c))
+
 ## [0.4.1](https://github.com/kimmymonassar/DeveroBot/compare/v0.4.0...v0.4.1) (2020-12-20)
 
 
