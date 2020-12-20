@@ -34,7 +34,7 @@ export default class inviteHelpCommands extends Command {
         .setURL('https://discord.com/api/oauth2/authorize?client_id=774981128419409960&permissions=3536896&scope=bot')
         .setAuthor('Deverobot#7186', 'https://devero.dev/_nuxt/img/devero_logo_small.8ca5e88.png', 'https://devero.dev')
         .setDescription(
-          'Awesome Discord bot to show various statistics, gamble, play music, open CSGO cases etc. You can see upcoming features at our Github repositorys roadmap [Roadmap](https://github.com/kimmymonassar/DeveroBot/blob/master/README.md#roadmap).',
+          'Awesome Discord bot to show various statistics, gamble, open CSGO cases etc. You can see upcoming features at our Github repositorys roadmap [Roadmap](https://github.com/kimmymonassar/DeveroBot/blob/master/README.md#roadmap).',
         )
         .setThumbnail('https://devero.dev/_nuxt/img/devero_logo_small.8ca5e88.png')
         .addFields(
