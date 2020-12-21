@@ -31,6 +31,7 @@ export default class getHelpCommands extends Command {
       - **listreddits** -- (also: 'listsubreddits') - lists currently subscribed subreddits
       - **cryptoprice** -- (also: 'crypto', 'btc', 'eth', 'xrp') - lists current cypto prices
       - **stock** -- (also: 'stockprice') - takes one argument in the form of stock symbol 
+      - **corona** -- (also: 'coronastats', 'covid', 'pandemic') - list corona stats from given country
       - **gamble** -- (also: 'dice') - takes on argument, gamble away your hard earned points
       - **balance** -- (also: 'wallet', 'money', 'currency', 'bal') show current balance
       - **beg** -- (also: 'moneypls') - begs for balance
