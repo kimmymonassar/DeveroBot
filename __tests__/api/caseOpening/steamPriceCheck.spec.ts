@@ -34,7 +34,7 @@ describe('calculateCaseItem.ts', () => {
       for (let i = 0; i < 5; i++) {
         const item: any = await getCsgoCase('Operation Broken Fang Case');
         // console.log(item);
-        const price = await getPrice(item.name, item.wear, item.statTrak);
+        const price = await getPrice(item.name, item.wear, item.grade, item.statTrak);
 
         if (!price.lowest && !price.median) {
           errors.push(item);
