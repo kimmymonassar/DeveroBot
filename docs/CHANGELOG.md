@@ -1,3 +1,15 @@
+# [0.5.0](https://github.com/kimmymonassar/DeveroBot/compare/v0.4.3...v0.5.0) (2020-12-21)
+
+
+### Bug Fixes
+
+* **api:** fix covid API error ([4a6bdf1](https://github.com/kimmymonassar/DeveroBot/commit/4a6bdf1209c73cc2f2eb339d34f8cde0cc113575))
+
+
+### Features
+
+* **cases:** show item market value for items ([bd710cb](https://github.com/kimmymonassar/DeveroBot/commit/bd710cb051ee329a1412808212abd08a56b8c3f1))
+
 ## [0.4.3](https://github.com/kimmymonassar/DeveroBot/compare/v0.4.2...v0.4.3) (2020-12-20)
 
 
