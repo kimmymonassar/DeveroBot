@@ -17,8 +17,8 @@ export default async function getCsgoCase(caseName: string, override = false) {
       : getRarityStats();
 
     const objItemsPath = rarityStats.grade === 'Special' ? 'specialItems' : 'items';
-
     const csGoCase = await Cases.findOne({ name: { $regex: caseName, $options: 'i' } });
+
     if (csGoCase) {
       const obj = csGoCase.toObject();
       const formattedAndRandomized = formatRandomItem(obj, objItemsPath, rarityStats);
