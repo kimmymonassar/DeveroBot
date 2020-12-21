@@ -43,9 +43,6 @@ const getRarity = (max: number) => {
   const rarityValue = Math.random() * (max - 0) + 0;
   const statTrakValue = Math.random() * (statTrakMultiplier(rarityValue) - 0) + 0;
   const floatValue = Math.random() * (1 - 0) + 0;
-  // console.log(`rarityValue: ${rarityValue}`);
-  // console.log(`statTrakValue: ${statTrakValue}`);
-  // console.log(`floatValue: ${floatValue}`);
   if (isBetween(rarityValue, 0, SPECIAL_RARITY)) {
     return {
       grade: 'Special',
