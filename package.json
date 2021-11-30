@@ -19,7 +19,7 @@
     "@types/mongoose": "5.10.1",
     "@types/node": "^14.14.14",
     "@types/ws": "^7.4.0",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "concurrently": "^5.3.0",
     "discord.js": "^12.5.1",
     "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
